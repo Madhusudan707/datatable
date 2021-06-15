@@ -1,10 +1,8 @@
-import React from 'react';
-
-
-const App = ()=> {
+import { Search } from './Components'
+const App = () => {
   return (
     <div className="App">
-      Hello World
+      <Search />
     </div>
   );
 }
