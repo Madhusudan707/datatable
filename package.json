@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.1.2",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -11,20 +12,10 @@
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.7",
     "axios": "^0.21.1",
-    "craco": "^0.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "typescript": "^4.3.2"
-  },
-  "devDependencies": {
-    "autoprefixer": "^9.8.6",
-    "eslint": "^7.28.0",
-    "eslint-loader": "^4.0.2",
-    "eslint-plugin-react": "^7.23.2",
-    "eslint-plugin-tailwind": "^0.2.1",
-    "postcss": "^7.0.35",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2"
   },
   "scripts": {
     "start": "craco start",
@@ -32,12 +23,14 @@
     "test": "craco test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "plugin:tailwind/recommended"
-    ]
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
+    "autoprefixer": "^9.8.6",
+    "eslint": "^7.28.0",
+    "eslint-plugin-react": "^7.24.0",
+    "postcss": "^7.0.35",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2"
   },
   "browserslist": {
     "production": [

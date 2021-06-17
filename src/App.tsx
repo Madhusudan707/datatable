@@ -1,8 +1,8 @@
-import { Search } from './Components'
+import { Table } from './Components'
 const App = () => {
   return (
     <div className="App">
-      <Search />
+      <Table/>
     </div>
   );
 }
