@@ -23,6 +23,7 @@ export const Table = () => {
     rowBg,
     isRowString,
   } = useDataTable();
+  console.log(mapStart,mapEnd)
   return (
     <div className="flex flex-row w-full mt-8 ">
       <div className="flex flex-col w-full items-center justify-center  ">

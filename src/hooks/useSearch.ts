@@ -1,18 +1,30 @@
 import { useUserData } from "../contexts";
 import axios from "axios";
+import { useDataTable } from "../hooks";
+
 export const useSearch = () => {
   const { state, dispatch } = useUserData();
+  const {
+   setActivePage,
+    activePage,
+    pagination
+  } = useDataTable();
 
+
+  
   const search = async (search_string:string) => {
     if (search_string) {
-      console.log(search_string);
+      
       const lowerSearch = search_string.toLowerCase();
       const data =state.response.filter(function (user) {
         return Object.values(user).some((val) =>
-          String(val).toLowerCase().includes(lowerSearch)
+          String(val).toLowerCase().includes(lowerSearch),
+         
         );
       });
       dispatch({ type: "ON_LOADING", payload: { response: data } });
+      setActivePage(1)
+      pagination(activePage)
     } else {
       try {
         const response = await axios.get(

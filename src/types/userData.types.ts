@@ -1,4 +1,4 @@
-import { Dispatch } from "react";
+import React, { Dispatch } from "react";
 
 export type User = {
   id: string;
@@ -20,6 +20,12 @@ export type ResponseActionType = {
 export type UserContextType = {
   state: SetResponse;
   dispatch: Dispatch<ResponseActionType>;
+  activePage: number;
+  setActivePage: React.Dispatch<React.SetStateAction<number>>;
+  mapStart:number;
+  setMapStart:React.Dispatch<React.SetStateAction<number>>
+  mapEnd:number;
+  setMapEnd:React.Dispatch<React.SetStateAction<number>>
 };
 
 export type UserProviderProp = {

@@ -2,10 +2,7 @@ import { useEffect, useState} from "react";
 import { useUserData } from "../contexts";
 
 export const useDataTable = () => {
-  const { state, dispatch } = useUserData();
-  const [mapStart, setMapStart] = useState(0);
-  const [mapEnd, setMapEnd] = useState(10);
-  const [activePage, setActivePage] = useState(1);
+  const { state, dispatch,activePage, setActivePage,mapStart,setMapStart,mapEnd,setMapEnd } = useUserData();
   const [isRemove, setIsRemove] = useState(false);
 
   const [isAllChecked, setIsAllChecked] = useState(false);
@@ -25,6 +22,7 @@ export const useDataTable = () => {
   }, [state.response, isChecked]);
 
   const pagination = (pagination_string:any |string | number) => {
+   
     if (pagination_string === "next" && mapEnd < userDataLength) {
       setMapStart(mapStart + 10);
       setMapEnd(mapEnd + 10);
@@ -47,10 +45,13 @@ export const useDataTable = () => {
       setMapStart(pageCount * 10 - 10);
       setMapEnd(pageCount * 10);
       setActivePage(pageCount);
-    } else if (pagination_string >= 1 && pagination_string <= pageCount) {
+    } 
+    else if (pagination_string >= 1 && pagination_string <= pageCount) {
+      console.log("searching",pagination_string)
       setMapStart((pagination_string - 1) * 10);
       setMapEnd(pagination_string * 10);
       setActivePage(pagination_string);
+      console.log(mapStart,mapEnd)
     }
   };
 
@@ -148,7 +149,10 @@ export const useDataTable = () => {
     pagination,
     mapStart,
     mapEnd,
+    setMapStart,
+    setMapEnd,
     activePage,
+    setActivePage,
     isRemove,
     deleteAll,
     handleSelectAll,
