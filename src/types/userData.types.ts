@@ -11,12 +11,23 @@ export type SetResponse = {
   response: User[];
   loading: boolean;
   message: string;
+  users:User[];
 };
 
-export type ResponseActionType = {
+
+
+
+export type ResponseActionType = 
+|{
   type: "ON_LOADING";
   payload: { response: User[] };
-};
+}
+|{
+  type:"ON_SEARCH";
+  payload:{response:User[]}
+}
+
+
 export type UserContextType = {
   state: SetResponse;
   dispatch: Dispatch<ResponseActionType>;

@@ -47,11 +47,9 @@ export const useDataTable = () => {
       setActivePage(pageCount);
     } 
     else if (pagination_string >= 1 && pagination_string <= pageCount) {
-      console.log("searching",pagination_string)
       setMapStart((pagination_string - 1) * 10);
       setMapEnd(pagination_string * 10);
       setActivePage(pagination_string);
-      console.log(mapStart,mapEnd)
     }
   };
 
@@ -77,7 +75,6 @@ export const useDataTable = () => {
           setIsRowString(false); //for checkbox
           const { id, checked } = e.target;
           setIsChecked([...isChecked, id]);
-          console.log(id, checked);
           if (!checked) {
             setIsChecked(isChecked.filter((item:any) => item !== id));
           }

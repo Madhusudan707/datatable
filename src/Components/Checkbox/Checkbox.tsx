@@ -1,4 +1,3 @@
-import React from 'react'
 import {CheckboxType} from '../../types/checkbox.types'
 export const Checkbox = ({
     id,

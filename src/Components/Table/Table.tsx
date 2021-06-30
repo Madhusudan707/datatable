@@ -1,13 +1,15 @@
-import React from 'react'
-import { useRef } from "react";
+
+import { useRef} from "react";
 import { Checkbox, Search, Pagination } from "../";
 import { useFetch, useDataTable } from "../../hooks";
 
+
+
 export const Table = () => {
   const { state } = useFetch();
-  const refName:any = useRef("");
-  const refEmail:any = useRef("");
-  const refRole:any = useRef("");
+  const refName: any = useRef("");
+  const refEmail: any = useRef("");
+  const refRole: any = useRef("");
   const {
     pageCount,
     pagination,
@@ -23,7 +25,8 @@ export const Table = () => {
     rowBg,
     isRowString,
   } = useDataTable();
-  console.log(mapStart,mapEnd)
+
+
   return (
     <div className="flex flex-row w-full mt-8 ">
       <div className="flex flex-col w-full items-center justify-center  ">
@@ -58,9 +61,8 @@ export const Table = () => {
                   return (
                     <tr
                       key={id}
-                      className={`border-b-2 ${
-                        isChecked.includes(id) ? rowBg : ""
-                      }`}
+                      className={`border-b-2 ${isChecked.includes(id) ? rowBg : ""
+                        }`}
                     >
                       <td className="px-8">
                         <Checkbox
@@ -111,15 +113,14 @@ export const Table = () => {
                         <i
                           className="fas fa-edit p-4 cursor-pointer"
                           onClick={() => {
-                            handleClick(false, id, "edit","","","");
+                            handleClick(false, id, "edit", "", "", "");
                           }}
                         ></i>
                         <i
-                          className={`fas fa-save p-4 cursor-pointer ${
-                            isChecked.includes(id) && isRowString
-                              ? ""
-                              : "hidden"
-                          }`}
+                          className={`fas fa-save p-4 cursor-pointer ${isChecked.includes(id) && isRowString
+                            ? ""
+                            : "hidden"
+                            }`}
                           onClick={() => {
                             handleClick(
                               false,
@@ -132,19 +133,18 @@ export const Table = () => {
                           }}
                         ></i>
                         <i
-                          className={`fas fa-window-close p-4 cursor-pointer ${
-                            isChecked.includes(id) && isRowString
-                              ? ""
-                              : "hidden"
-                          }`}
+                          className={`fas fa-window-close p-4 cursor-pointer ${isChecked.includes(id) && isRowString
+                            ? ""
+                            : "hidden"
+                            }`}
                           onClick={() => {
-                            handleClick(false, id, "cancel","","","");
+                            handleClick(false, id, "cancel", "", "", "");
                           }}
                         ></i>
                         <i
                           className="far fa-trash-alt cursor-pointer"
                           onClick={() => {
-                            handleClick(false, id, "delete","","","");
+                            handleClick(false, id, "delete", "", "", "");
                           }}
                         ></i>
                       </td>
